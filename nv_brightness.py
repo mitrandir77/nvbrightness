@@ -21,7 +21,7 @@ CURRENT_VALUE = nvapeek(CURRENT_REGISTER) & ~0xc0000000
 
 STEP = (MAX_VALUE-MIN_VALUE)/20
 
-if len(sys.argv>1):
+if len(sys.argv)>1:
     cmd = sys.argv[1]
 
     print CURRENT_VALUE
