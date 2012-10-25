@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 import commands
 import sys
 
@@ -34,5 +35,7 @@ elif cmd == 'down':
     if CURRENT_VALUE < MIN_VALUE:
         CURRENT_VALUE = MIN_VALUE
     nvapoke(CURRENT_REGISTER, CURRENT_VALUE | 0xc0000000)
+elif cmd == 'max':
+    nvapoke(CURRENT_REGISTER, MAX_VALUE | 0xc0000000)
 else:
     print "usage %s [up|down]" % sys.argv[0]
