@@ -20,17 +20,18 @@ CURRENT_VALUE = nvpeek(CURRENT_REGISTER)
 
 STEP = (MAX_VALUE-MIN_VALUE)/20
 
-cmd = sys.argv[1]
+if len(sys.argv>1):
+    cmd = sys.argv[1]
 
-if cmd == 'up':
-    CURRENT_VALUE += STEP
-    if CURRENT_VALUE > MAX_VALUE:
-        CURRENT_VALUE = MAX_VALUE
-    nvpoke(CURRENT_REGISTER, CURRENT_VALUE)
-elif cmd == 'down':
-    CURRENT_VALUE -= STEP
-    if CURRENT_VALUE < MIN_VALUE:
-        CURRENT_VALUE = MIN_VALUE
-    nvpoke(CURRENT_REGISTER, CURRENT_VALUE)
+    if cmd == 'up':
+        CURRENT_VALUE += STEP
+        if CURRENT_VALUE > MAX_VALUE:
+            CURRENT_VALUE = MAX_VALUE
+        nvpoke(CURRENT_REGISTER, CURRENT_VALUE)
+    elif cmd == 'down':
+        CURRENT_VALUE -= STEP
+        if CURRENT_VALUE < MIN_VALUE:
+            CURRENT_VALUE = MIN_VALUE
+        nvpoke(CURRENT_REGISTER, CURRENT_VALUE)
 else:
     print "usage %s [up|down]" % sys.argv[0]
