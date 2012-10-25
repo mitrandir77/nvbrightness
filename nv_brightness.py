@@ -29,8 +29,8 @@ if cmd == 'up':
     nvpoke(CURRENT_REGISTER, CURRENT_VALUE)
 elif cmd == 'down':
     CURRENT_VALUE -= STEP
-    if CURRENT_VALUE < 0:
-        CURRENT_VALUE = MAX_VALUE
+    if CURRENT_VALUE < MIN_VALUE:
+        CURRENT_VALUE = MIN_VALUE
     nvpoke(CURRENT_REGISTER, CURRENT_VALUE)
 else:
     print "usage %s [up|down]" % sys.argv[0]
