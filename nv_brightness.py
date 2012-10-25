@@ -39,4 +39,4 @@ if len(sys.argv)>1:
     elif cmd == 'max':
         nvapoke(CURRENT_REGISTER, MAX_VALUE | 0xc0000000)
 else:
-    print "usage %s [up|down]" % sys.argv[0]
+    print "usage %s [up|down|max]" % sys.argv[0]
